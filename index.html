@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#101316" />
+  <title>IRON FRONT — Última guardia</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="game-shell">
+    <canvas id="game" aria-label="Juego de disparos en primera persona"></canvas>
+    <div class="vignette"></div>
+    <header class="topline"><div class="brand"><span class="brand-mark">IF</span><span>IRON FRONT <small>ÚLTIMA GUARDIA</small></span></div><div class="objective"><i></i> MANTÉN LA POSICIÓN</div><button id="sound-btn" class="icon-btn" aria-label="Activar o desactivar sonido">♫</button></header>
+    <section class="hud" aria-live="polite">
+      <div class="wave-card"><span class="eyebrow">OLEADA</span><strong id="wave">01</strong><span id="wave-state">PREPARACIÓN</span></div>
+      <div class="mission"><span class="eyebrow">HOSTILES RESTANTES</span><strong id="enemies-left">0</strong><div class="progress"><i id="wave-progress"></i></div></div>
+      <div class="health"><span class="eyebrow">INTEGRIDAD</span><div class="health-line"><i id="health-fill"></i></div><strong id="health-value">100</strong></div>
+      <div class="ammo"><span class="eyebrow">RIFLE DE ASALTO</span><strong><span id="ammo">30</span><small> / <span id="reserve">180</span></small></strong><span id="ammo-status">LISTO PARA DISPARAR</span></div>
+    </section>
+    <div id="crosshair"><i></i><i></i><i></i><i></i><b></b></div>
+    <div id="hitmarker">✕</div>
+    <div id="damage-flash"></div>
+    <aside id="toast" class="toast"></aside>
+    <div id="interaction" class="interaction">[ E ] <span>REABASTECER MUNICIÓN</span></div>
+    <div class="bottom-hud"><div class="controls-hint"><kbd>W A S D</kbd> MOVER <kbd>SHIFT</kbd> CORRER <kbd>R</kbd> RECARGAR <kbd>Q</kbd> CUBRIRSE</div><div class="player-tag"><span></span> SARGENTO VEGA <small>DELTA-04</small></div></div>
+    <div id="map-wrap"><div class="map-label">SECTOR <b>09</b></div><canvas id="minimap" width="132" height="132"></canvas></div>
+    <div class="mobile-controls" id="mobile-controls"><div class="stick" id="stick"><i></i></div><div class="touch-actions"><button id="touch-reload">↻</button><button id="touch-cover">▣</button><button id="touch-fire">FUEGO</button></div></div>
+    <section id="overlay" class="overlay">
+      <div class="modal">
+        <div class="overline"><span></span> OPERACIÓN EN CURSO <span></span></div>
+        <div class="crest">IF</div>
+        <h1 id="overlay-title">ÚLTIMA<br><em>GUARDIA</em></h1>
+        <p id="overlay-copy">La línea ha caído. Aguanta cada oleada, usa la cobertura y no dejes que atraviesen el perímetro.</p>
+        <div class="briefing"><div><small>OBJETIVO</small><b>SOBREVIVE A LAS OLEADAS</b></div><div><small>CONTROLES</small><b>WASD · RATÓN · CLIC</b></div></div>
+        <button id="start-btn" class="primary-btn">DESPLEGARSE <span>→</span></button>
+        <div class="footnote">EN PC: ratón para apuntar · ESC para liberar el cursor<br>EN MÓVIL: joystick y botón de fuego</div>
+      </div>
+    </section>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
